@@ -34,3 +34,11 @@ mean(pull(problem1_df, sample_char))
 
 mean(pull(problem1_df, sample_factor))
 ```
+
+The mean value of variable sample and sample_logic can be calculated becuase the value stored in these 2 variables are numbers.
+
+The mean value for variable sample_logic and sample_char cannot be calculated because the value  stored in these 2 variables are string. 
+
+
+
+
