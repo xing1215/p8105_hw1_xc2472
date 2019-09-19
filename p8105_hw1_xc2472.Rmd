@@ -88,10 +88,17 @@ b = ggplot(problem2_df, aes(x = x, y = y, color = var_num)) + geom_point()
 
 c = ggplot(problem2_df, aes(x = x, y = y, color = var_factor)) + geom_point()
 
+a
+b
+c
 ```
 
 ##comment on color scale
-In both 3 plots, the color of the dots are devided into 2 colors. Because in logical vector, var_logic, only 2 values "true" and "false" can be found. The numeric variable, var_num, is converted from var_logic. Thus, only 0 and 1 are stored in this variable. In var_factor, the logical vector is converted to a categorical variable, containing the value "TRUE" and "FALSE". 
+When the plot is colored by logical vector, two colors are created for the value "TURE" and"FALSE". 
+
+When the plot is colored by numeric variable, a series of colors, ranged from light to dark, are created. But this numeric variable is converted from a logical variable. Thus only two values exist in it and the dots are only in 2 colors.
+
+When the plot is colored by factor variable, the number of colors are created depending on the level of factor variable. Because this factor variable is converted from a logical variable, only 2 levels exist in it and the dots in the scatter plot are in 2 colors.
 
 ##output the first plot
 ```{r}
