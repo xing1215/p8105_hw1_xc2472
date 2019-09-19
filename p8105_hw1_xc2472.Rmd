@@ -63,6 +63,7 @@ as.numeric(as.factor(pull(problem1_df, sample_logic))) * pull(problem1_df, sampl
 
 #Problem 2
 
+#create a dataframe with 5 variables
 ```{r}
 set.seed(10)
 
@@ -78,4 +79,14 @@ problem2_df = tibble(
  The data frame problem2_df has `r nrow(problem2_df)` rows and 
 `r ncol(problem2_df)` columns. 
 The mean value of x is `r mean(pull(problem2_df, x))`, the median value of x is `r median(pull(problem2_df, x))`, and the standard deviation of x is `r sd(pull(problem2_df, x))`. The proportion for `x + y > 1` is `r mean(pull(problem2_df, var_logic) == "TRUE")`
+
+##plot 3 scatterplots for variables x and y, colored by different variables
+```{r}
+a = ggplot(problem2_df, aes(x = x, y = y, color = var_logic)) + geom_point()
+
+b = ggplot(problem2_df, aes(x = x, y = y, color = var_num)) + geom_point()
+
+c = ggplot(problem2_df, aes(x = x, y = y, color = var_factor)) + geom_point()
+
+```
 
