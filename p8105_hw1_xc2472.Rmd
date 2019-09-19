@@ -93,3 +93,7 @@ c = ggplot(problem2_df, aes(x = x, y = y, color = var_factor)) + geom_point()
 ##comment on color scale
 In both 3 plots, the color of the dots are devided into 2 colors. Because in logical vector, var_logic, only 2 values "true" and "false" can be found. The numeric variable, var_num, is converted from var_logic. Thus, only 0 and 1 are stored in this variable. In var_factor, the logical vector is converted to a categorical variable, containing the value "TRUE" and "FALSE". 
 
+##output the first plot
+```{r}
+ggsave("scatter_plot.pdf", plot = a)
+```
