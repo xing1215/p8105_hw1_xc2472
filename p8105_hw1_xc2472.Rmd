@@ -39,6 +39,16 @@ The mean value of variable sample and sample_logic can be calculated becuase the
 
 The mean value for variable sample_logic and sample_char cannot be calculated because the value  stored in these 2 variables are string. 
 
+##coerce the variables to numeric
+
+```{r, results='hide'}
+as.numeric(pull(problem1_df, sample_logic))
+
+as.numeric(pull(problem1_df, sample_char))
+
+as.numeric(pull(problem1_df, sample_factor))
+```
+
 
 
 
