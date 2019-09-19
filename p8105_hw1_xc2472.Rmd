@@ -75,4 +75,7 @@ problem2_df = tibble(
 )
 ```
 
+ The data frame problem2_df has `r nrow(problem2_df)` rows and 
+`r ncol(problem2_df)` columns. 
+The mean value of x is `r mean(pull(problem2_df, x))`, the median value of x is `r median(pull(problem2_df, x))`, and the standard deviation of x is `r sd(pull(problem2_df, x))`. The proportion for `x + y > 1` is `r mean(pull(problem2_df, var_logic) == "TRUE")`
 
