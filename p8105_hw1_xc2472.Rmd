@@ -7,5 +7,30 @@ output: github_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
+
+#**Problem 1**
+
+##create a data frame containing 4 variables
+
+```{r}
+set.seed(1)
+
+problem1_df = tibble(
+  sample = rnorm(8),
+  sample_logic = sample > 0,
+  sample_char = c("hellow", "world", "this", "this", "is", "a","test", "!"),
+  sample_factor = factor(c("apple", "banana", "grape", "banana", "grape",
+                           "apple", "grape", "apple"))
+)
+
+mean(pull(problem1_df, sample))
+
+mean(pull(problem1_df, sample_logic))
+
+mean(pull(problem1_df, sample_char))
+
+mean(pull(problem1_df, sample_factor))
+```
