@@ -61,6 +61,18 @@ as.factor(pull(problem1_df, sample_logic)) * pull(problem1_df, sample)
 as.numeric(as.factor(pull(problem1_df, sample_logic))) * pull(problem1_df, sample)
 ```
 
+#Problem 2
 
+```{r}
+set.seed(10)
+
+problem2_df = tibble(
+  x = rnorm(500),
+  y = rnorm(500),
+  var_logic = x + y > 1,
+  var_num = as.numeric(var_logic),
+  var_factor = as.factor(var_logic)
+)
+```
 
 
