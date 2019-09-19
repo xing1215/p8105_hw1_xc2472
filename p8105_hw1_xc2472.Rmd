@@ -49,6 +49,18 @@ as.numeric(pull(problem1_df, sample_char))
 as.numeric(pull(problem1_df, sample_factor))
 ```
 
+explainating...
+
+##coerce the variables into different classes
+
+```{r}
+as.numeric(pull(problem1_df, sample_logic)) * pull(problem1_df, sample)
+
+as.factor(pull(problem1_df, sample_logic)) * pull(problem1_df, sample)
+
+as.numeric(as.factor(pull(problem1_df, sample_logic))) * pull(problem1_df, sample)
+```
+
 
 
 
