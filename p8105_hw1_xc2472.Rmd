@@ -11,9 +11,9 @@ library(tidyverse)
 ```
 
 
-#**Problem 1**
+# **Problem 1**
 
-##create a data frame containing 4 variables
+## create a data frame containing 4 variables
 
 ```{r}
 set.seed(1)
@@ -39,7 +39,7 @@ The mean value of variable sample and sample_logic can be calculated becuase the
 
 The mean value for variable sample_logic and sample_char cannot be calculated because the value  stored in these 2 variables are string. 
 
-##coerce the variables to numeric
+## coerce the variables to numeric
 
 ```{r, results='hide'}
 as.numeric(pull(problem1_df, sample_logic))
@@ -51,7 +51,7 @@ as.numeric(pull(problem1_df, sample_factor))
 
 explainating...
 
-##coerce the variables into different classes
+## coerce the variables into different classes
 
 ```{r}
 as.numeric(pull(problem1_df, sample_logic)) * pull(problem1_df, sample)
@@ -61,9 +61,9 @@ as.factor(pull(problem1_df, sample_logic)) * pull(problem1_df, sample)
 as.numeric(as.factor(pull(problem1_df, sample_logic))) * pull(problem1_df, sample)
 ```
 
-#Problem 2
+# Problem 2
 
-#create a dataframe with 5 variables
+# create a dataframe with 5 variables
 ```{r}
 set.seed(10)
 
@@ -80,7 +80,7 @@ problem2_df = tibble(
 `r ncol(problem2_df)` columns. 
 The mean value of x is `r mean(pull(problem2_df, x))`, the median value of x is `r median(pull(problem2_df, x))`, and the standard deviation of x is `r sd(pull(problem2_df, x))`. The proportion for `x + y > 1` is `r mean(pull(problem2_df, var_logic) == "TRUE")`
 
-##plot 3 scatterplots for variables x and y, colored by different variables
+## plot 3 scatterplots for variables x and y, colored by different variables
 ```{r}
 ggplot(problem2_df, aes(x = x, y = y, color = var_logic)) + geom_point()
 
@@ -89,14 +89,14 @@ ggplot(problem2_df, aes(x = x, y = y, color = var_num)) + geom_point()
 ggplot(problem2_df, aes(x = x, y = y, color = var_factor)) + geom_point()
 ```
 
-##comment on color scale
+## comment on color scale
 When the plot is colored by logical vector, two colors are created for the value "TURE" and"FALSE". 
 
 When the plot is colored by numeric variable, a series of colors, ranged from light to dark, are created. But this numeric variable is converted from a logical variable. Thus only two values exist in it and the dots are only in 2 colors.
 
 When the plot is colored by factor variable, the number of colors are created depending on the level of factor variable. Because this factor variable is converted from a logical variable, only 2 levels exist in it and the dots in the scatter plot are in 2 colors.
 
-##output the first plot
+## output the first plot
 ```{r}
 ggsave("scatter_plot.pdf", plot = ggplot(problem2_df, aes(x = x, y = y, color = var_logic)) + geom_point())
 ```
